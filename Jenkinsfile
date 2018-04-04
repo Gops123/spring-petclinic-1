@@ -19,7 +19,7 @@ pipeline {
          }
          post {
              always {
-                 junit 'pom.xml
+                 junit 'pom.xml'
       
  	       }
          }
