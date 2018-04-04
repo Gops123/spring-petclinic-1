@@ -14,11 +14,12 @@ pipeline {
     }
     stage('Test') {
          steps {
+	     sh 'mvn package'
              sh 'mvn test'
          }
          post {
              always {
-                 junit 'target/surefire-reports/*.xml
+                 junit '*.xml
       
  	       }
          }
