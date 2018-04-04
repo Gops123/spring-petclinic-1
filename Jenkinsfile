@@ -11,17 +11,17 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
-    }
-    stage('Test') {
-         steps {
-	     sh 'mvn package'
-             sh 'mvn test'
-         }
-         post {
-             always {
-                 junit 'pom.xml'
+        stage('Test') {
+             steps {
+	         sh 'mvn package'
+                 sh 'mvn test'
+             }
+             post {
+                 always {
+                     junit 'pom.xml'
       
- 	       }
-         }
-     }
+ 	        }
+            }
+       }
+    }
 }
